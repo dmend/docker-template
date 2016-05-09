@@ -1,0 +1,9 @@
+---
+- name: add docker yum repo
+  copy: src=files/docker.repo dest=/etc/yum.repos.d/docker.repo
+
+- name: install docker engine
+  dnf: name=docker-engine state=present
+
+- name: make sure docker service is running
+  service: name=docker state=started

@@ -1,0 +1,13 @@
+---
+# TODO(dmend): remove this when ansible supports python 3
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: install python 2 and ansible dependencies
+      raw: dnf install -y python2 python2-dnf libselinux-python
+
+- hosts: all
+  become: yes
+  roles:
+    - docker_host
