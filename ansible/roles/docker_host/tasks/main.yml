@@ -7,3 +7,9 @@
 
 - name: make sure docker service is running
   service: name=docker state=started
+
+- name: make sure docker group exists
+  group: name=docker state=present
+
+- name: add docker group to ansible user
+  user: name=vagrant groups=docker append=yes
