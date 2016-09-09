@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "fedora-23"
+  config.vm.box = "fedora-24"
 
   config.vm.provider "virtualbox" do |vm|
     vm.memory = 2048
